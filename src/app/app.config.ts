@@ -11,9 +11,10 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideFirebaseApp(() => initializeApp({ "projectId": "chat-play-live", "appId": "1:597013068918:web:63e02a62392164e2097357", "storageBucket": "chat-play-live.appspot.com", "apiKey": "AIzaSyBBcjZtLKLv65_17YLE8VJMB5BzfTeSRtA", "authDomain": "chat-play-live.firebaseapp.com", "messagingSenderId": "597013068918", "measurementId": "G-2EDPSL541H" })),
+    provideFirebaseApp(() => initializeApp({ "projectId": "chat-play-live", "appId": "1:597013068918:web:63e02a62392164e2097357", "databaseURL": "https://chat-play-live-default-rtdb.europe-west1.firebasedatabase.app", "storageBucket": "chat-play-live.appspot.com", "apiKey": "AIzaSyBBcjZtLKLv65_17YLE8VJMB5BzfTeSRtA", "authDomain": "chat-play-live.firebaseapp.com", "messagingSenderId": "597013068918", "measurementId": "G-2EDPSL541H" })),
     provideAuth(() => getAuth()),
     //provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
-    provideAnimationsAsync()]
+    provideAnimationsAsync()
+  ]
 };
