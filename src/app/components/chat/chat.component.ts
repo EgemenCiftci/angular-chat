@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Message } from '../../models/message';
 import { SessionService } from '../../services/session.service';
@@ -13,13 +13,12 @@ import { Observable } from 'rxjs';
   styleUrl: './chat.component.css'
 })
 export class ChatComponent {
+  private sessionService = inject(SessionService);
+
   sessionId?: number;
   messages$?: Observable<Message[]>;
   newMessage: string = '';
   currentUser: string = 'User';
-
-  constructor(private sessionService: SessionService) {
-  }
 
   sendMessage() {
     if (this.sessionId) {

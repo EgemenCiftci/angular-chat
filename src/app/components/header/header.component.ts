@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Auth, onAuthStateChanged } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,9 +13,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
-  user: any = null;
+  private auth = inject(Auth);
+  private router = inject(Router);
 
-  constructor(private auth: Auth, private router: Router) { }
+  user: any = null;
 
   ngOnInit() {
     onAuthStateChanged(this.auth, (user) => {

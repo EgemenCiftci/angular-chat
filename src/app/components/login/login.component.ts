@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import * as firebaseui from 'firebaseui'; // don't convert to default import
 import { Auth, EmailAuthProvider, FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, TwitterAuthProvider } from '@angular/fire/auth';
 
@@ -10,9 +10,8 @@ import { Auth, EmailAuthProvider, FacebookAuthProvider, GithubAuthProvider, Goog
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements AfterViewInit {
+  private auth = inject(Auth);
 
-  constructor(private auth: Auth) {
-  }
 
   ngAfterViewInit() {
     const ui = new firebaseui.auth.AuthUI(this.auth);
