@@ -1,0 +1,8 @@
+<mat-selection-list #shoesList [multiple]="false">
+    @for (session of sessions$ | async; track session.id) {
+    <mat-list-option [value]="session.id">{{session.name}}</mat-list-option>
+    }
+    @empty {
+    <p>There are no sessions.</p>
+    }
+</mat-selection-list>
