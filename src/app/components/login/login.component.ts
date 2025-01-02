@@ -12,7 +12,6 @@ import { Auth, EmailAuthProvider, FacebookAuthProvider, GithubAuthProvider, Goog
 export class LoginComponent implements AfterViewInit {
   private auth = inject(Auth);
 
-
   ngAfterViewInit() {
     const ui = new firebaseui.auth.AuthUI(this.auth);
     const uiConfig = {
