@@ -3,11 +3,10 @@ import * as firebaseui from 'firebaseui'; // don't convert to default import
 import { Auth, EmailAuthProvider, FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, TwitterAuthProvider } from '@angular/fire/auth';
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+    selector: 'app-login',
+    imports: [],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css'
 })
 export class LoginComponent implements AfterViewInit {
   private auth = inject(Auth);

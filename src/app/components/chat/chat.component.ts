@@ -6,11 +6,10 @@ import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-chat',
-  standalone: true,
-  imports: [FormsModule, AsyncPipe],
-  templateUrl: './chat.component.html',
-  styleUrl: './chat.component.css'
+    selector: 'app-chat',
+    imports: [FormsModule, AsyncPipe],
+    templateUrl: './chat.component.html',
+    styleUrl: './chat.component.css'
 })
 export class ChatComponent {
   private sessionService = inject(SessionService);
